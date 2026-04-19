@@ -1,0 +1,602 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    color: #333;
+    line-height: 1.6;
+    background-color: #fff;
+    overflow-x: hidden;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+    font-family: 'Istok Web', sans-serif; /* Applied Istok Web */
+}
+
+.logo .v-circle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border: 1px solid #333;
+    border-radius: 50%;
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 2.5rem;
+    align-items: center;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #555;
+    font-weight: 400; /* Regular weight */
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.nav-links a:not(.active):hover {
+    color: #FFC107;
+    transform: translateY(-2px);
+}
+
+.nav-links a.active {
+    background-color: #FFC107;
+    color: #000;
+    padding: 0.4rem 1.2rem;
+    border-radius: 20px;
+    font-weight: 600;
+}
+
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 5%;
+}
+
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 4rem;
+    margin-bottom: 70px; /* Exact 70px gap to tools */
+}
+
+.hero-content {
+    flex: 1;
+    max-width: 600px;
+    margin-top: 5rem; /* Moves the text and buttons downward */
+}
+
+.hero-content h1 {
+    font-family: 'Istok Web', sans-serif;
+    font-size: 4rem;
+    font-weight: 400; /* Regular weight */
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    color: #111;
+}
+
+.hero-content .highlight {
+    color: #FFC107;
+}
+
+.hero-content p {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 2.5rem;
+    max-width: 450px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.btn-outline {
+    background: transparent;
+    border: 1px solid #999;
+    padding: 0.6rem 1.5rem;
+    border-radius: 25px;
+    font-size: 0.9rem;
+    color: #333;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-family: inherit;
+    font-weight: 500;
+}
+
+.btn-outline:hover {
+    border-color: #333;
+    background-color: #333;
+    color: #fff;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.hero-image img {
+    max-width: 100%;
+    width: 400px;
+    height: auto;
+    object-fit: cover;
+    /* Mask for soft bottom edge */
+    -webkit-mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+    mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+}
+
+.tools {
+    margin-bottom: 6rem;
+}
+
+.tools h2 {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    font-weight: 600;
+}
+
+.tools-grid {
+    display: flex;
+    justify-content: space-between; /* Space evenly across container */
+    gap: 1rem; /* Minimum gap */
+    text-align: center;
+    padding-top: 1.5rem; /* Added padding to prevent hover animation clipping */
+}
+
+.tools-grid::-webkit-scrollbar {
+    display: none;
+}
+
+.tool-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1; /* Automatically resize to fit in one line */
+    min-width: 0; /* Prevents overflow pushing */
+}
+
+.tool-item img {
+    margin-bottom: 1rem;
+    transition: all 0.3s ease; /* Smoother, subtler transition */
+    filter: drop-shadow(0 2px 5px rgba(0,0,0,0.05)); /* Subtle resting shadow */
+}
+
+.tool-item:hover img {
+    transform: translateY(-4px) scale(1.05); /* Very subtle lift and scale */
+    filter: drop-shadow(0 8px 15px rgba(0,0,0,0.1)); /* Soft shadow on hover */
+}
+
+.tool-item h3 {
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.tool-item p {
+    font-size: 0.75rem;
+    color: #777;
+    line-height: 1.4;
+}
+
+.explore {
+    background-color: #f9f9f9;
+    padding: 4rem 0;
+    margin: 0 -50vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+}
+
+.explore-box {
+    background: #fff;
+    padding: 3rem 6rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.05);
+    text-align: center;
+    max-width: 800px;
+    width: 90%;
+}
+
+.explore-box h2 {
+    font-size: 2rem;
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+}
+
+.btn-solid {
+    background: #000;
+    color: #fff;
+    border: none;
+    padding: 0.8rem 2.5rem;
+    border-radius: 30px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s;
+    font-family: inherit;
+}
+
+.btn-solid:hover {
+    background: #333;
+}
+
+.certificates {
+    text-align: center;
+    margin: 6rem 0;
+}
+
+.certificates h2 {
+    font-size: 2rem;
+    font-weight: 500;
+    letter-spacing: 2px;
+    margin-bottom: 4rem;
+}
+
+.certificates-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6rem;
+    perspective: 1000px;
+    margin-top: 2rem;
+    padding-bottom: 4rem;
+}
+
+.cert {
+    width: 280px; /* Made smaller */
+    max-width: 45%;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    border-radius: 8px;
+    overflow: hidden;
+    background: #fff;
+}
+
+.cert img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transform: scale(1.025);
+    transform-origin: center;
+}
+
+.left-cert {
+    transform: rotate(-15deg) translateY(-20px);
+    z-index: 2;
+}
+
+.right-cert {
+    transform: rotate(5deg) translateY(40px);
+    z-index: 1;
+}
+
+.left-cert:hover, .right-cert:hover {
+    transform: rotate(0) translateY(-10px) scale(1.2);
+    z-index: 10;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.2);
+}
+
+.connect {
+    text-align: center;
+    margin-bottom: 6rem;
+}
+
+.connect h2 {
+    font-size: 2rem;
+    font-weight: 500;
+    letter-spacing: 2px;
+    margin-bottom: 1rem;
+}
+
+.connect p {
+    color: #666;
+    margin-bottom: 3rem;
+    font-size: 1rem;
+}
+
+.contact-info {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.contact-pill {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    border: 1px solid #999;
+    padding: 0.6rem 1.5rem;
+    border-radius: 30px;
+    font-size: 0.95rem;
+    color: #333;
+    background: #fff;
+}
+
+.contact-pill svg {
+    color: #555;
+}
+
+@media (max-width: 900px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .hero-content p {
+        margin: 0 auto 2.5rem;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .hero-image {
+        margin-top: 3rem;
+        justify-content: center;
+    }
+
+    .certificates-container {
+        flex-direction: column;
+    }
+
+    .cert {
+        width: 80%;
+        max-width: 400px;
+        transform: none !important;
+        margin-bottom: 2rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .nav-links {
+        display: none;
+    }
+    
+    .hero-content h1 {
+        font-size: 3rem;
+    }
+    
+    .contact-info {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+/* Portfolio Page Styles */
+body.bg-light {
+    background-color: #f5f5f5;
+}
+
+.portfolio-container {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    padding: 3rem 5%;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.project-card {
+    background: #fff;
+    border-radius: 20px;
+    padding: 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1000px;
+    box-shadow: 0 15px 45px rgba(0,0,0,0.12); /* Rich, prominent drop shadow */
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 25px 60px rgba(0,0,0,0.2); /* Deep shadow on lift */
+}
+
+.project-info {
+    flex: 1;
+    padding-right: 2rem;
+}
+
+.project-info h2 {
+    font-size: 2.5rem;
+    font-weight: 400;
+    line-height: 1.4;
+    letter-spacing: 3px;
+    margin-bottom: 2.5rem;
+    text-transform: uppercase;
+    color: #111;
+}
+
+.project-info h2.normal-case {
+    text-transform: none;
+    letter-spacing: 1px;
+}
+
+.project-info h2 strong {
+    font-weight: 700;
+}
+
+.project-info .btn-solid {
+    display: inline-block;
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 0.8rem 2.5rem;
+}
+
+.project-image {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.project-image img {
+    max-width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+@media (max-width: 768px) {
+    .project-card {
+        flex-direction: column;
+        text-align: center;
+        padding: 2rem;
+    }
+    .project-info {
+        padding-right: 0;
+        margin-bottom: 2rem;
+    }
+    .project-info h2 {
+        font-size: 2rem;
+    }
+    .project-image {
+        justify-content: center;
+    }
+}
+
+/* Animations & Micro-interactions */
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.animate-on-scroll.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Enhancing hover states */
+.project-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 50px rgba(0,0,0,0.1);
+}
+
+.tool-item {
+    transition: transform 0.3s ease;
+}
+.tool-item:hover {
+    transform: translateY(-5px) scale(1.05);
+}
+
+.contact-pill {
+    transition: all 0.3s ease;
+}
+.contact-pill:hover {
+    background-color: #FFC107;
+    color: #000;
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 10px 20px rgba(255, 193, 7, 0.2);
+    border-color: #FFC107;
+}
+.contact-pill:hover svg {
+    color: #000;
+}
+
+/* Certificate Modal & Animations */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.85);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    backdrop-filter: blur(5px); /* Add a modern blur to background */
+    overflow: hidden; /* Prevent scrolling */
+    perspective: 1500px; /* Added for 3D flip effect */
+}
+
+.modal.show {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+    padding: 0;
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    max-width: 90vw;
+    max-height: 90vh; /* Constrain height to screen size */
+    width: auto; /* Allow width to scale based on constrained height */
+    border-radius: 8px;
+    box-shadow: 0 15px 50px rgba(0,0,0,0.5);
+    transform: rotateY(-90deg) scale(0.8); /* Start flipped sideways */
+    transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Bouncy flip transition */
+}
+
+.modal.show .modal-content {
+    transform: rotateY(0deg) scale(1); /* Flips to flat */
+}
+
+.modal-close {
+    position: absolute;
+    top: 30px;
+    right: 40px;
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    z-index: 1001;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 0;
+}
+
+.modal-close:hover {
+    background: #FFC107;
+    color: #000;
+    border-color: #FFC107;
+    transform: scale(1.1) rotate(90deg);
+}
+
+.modal-close svg {
+    width: 24px;
+    height: 24px;
+    transition: transform 0.3s ease;
+}
+
+/* Make certs look clickable */
+.cert {
+    cursor: zoom-in;
+}
